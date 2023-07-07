@@ -1,0 +1,277 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  us/call  us/call  name    
+ 40.41      3.92     3.92 8076865408     0.00     0.00  LinearFlux<double>::computeFlux(double const&)
+ 16.19      5.49     1.57    41667    37.68    37.68  RungeKutta4<double>::finalizeRK(double)
+ 13.09      6.76     1.27    83334    15.24    15.24  RungeKutta4<double>::stepUi(double)
+ 11.55      7.88     1.12    83334    13.44    13.44  RungeKutta4<double>::setFi(DataStruct<double>&)
+ 10.00      8.85     0.97    83334    11.64    58.68  Central1D<double>::evalRHS(DataStruct<double>&)
+  8.45      9.67     0.82                             main
+  0.10      9.68     0.01    83338     0.12     0.12  DataStruct<double>::setSize(int)
+  0.10      9.69     0.01    83334     0.12     0.12  Central1D<double>::eval(DataStruct<double>&)
+  0.10      9.70     0.01                             _init
+  0.00      9.70     0.00   125001     0.00     0.00  RungeKutta4<double>::getNumSteps()
+  0.00      9.70     0.00    83334     0.00     0.00  RungeKutta4<double>::currentU()
+  0.00      9.70     0.00    83334     0.00     0.00  Central1D<double>::ref2RHS()
+  0.00      9.70     0.00    41667     0.00     0.00  RungeKutta4<double>::initRK()
+  0.00      9.70     0.00        4     0.00     0.00  DataStruct<double>::DataStruct(int)
+  0.00      9.70     0.00        4     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&)
+  0.00      9.70     0.00        2     0.00     0.00  write2File(DataStruct<double>&, DataStruct<double>&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)
+  0.00      9.70     0.00        1     0.00     0.00  calcL2norm(DataStruct<double>&, DataStruct<double>&)
+  0.00      9.70     0.00        1     0.00     0.00  LinearFlux<double>::LinearFlux()
+  0.00      9.70     0.00        1     0.00     0.00  RHSOperator<double>::RHSOperator()
+  0.00      9.70     0.00        1     0.00     0.00  RHSOperator<double>::~RHSOperator()
+  0.00      9.70     0.00        1     0.00     0.24  RungeKutta4<double>::RungeKutta4(DataStruct<double>&)
+  0.00      9.70     0.00        1     0.00     0.00  RungeKutta4<double>::~RungeKutta4()
+  0.00      9.70     0.00        1     0.00     0.00  FluxFunction<double>::FluxFunction()
+  0.00      9.70     0.00        1     0.00     0.12  Central1D<double>::Central1D(DataStruct<double>&, DataStruct<double>&, FluxFunction<double>&)
+  0.00      9.70     0.00        1     0.00     0.00  Central1D<double>::~Central1D()
+  0.00      9.70     0.00        1     0.00     0.00  frame_dummy
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2022 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 4 byte(s) for 0.10% of 9.70 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]     99.9    0.82    8.87                 main [1]
+                0.97    3.92   83334/83334       Central1D<double>::evalRHS(DataStruct<double>&) [2]
+                1.57    0.00   41667/41667       RungeKutta4<double>::finalizeRK(double) [4]
+                1.27    0.00   83334/83334       RungeKutta4<double>::stepUi(double) [5]
+                1.12    0.00   83334/83334       RungeKutta4<double>::setFi(DataStruct<double>&) [6]
+                0.01    0.00   83334/83334       Central1D<double>::eval(DataStruct<double>&) [8]
+                0.01    0.00   83335/83338       DataStruct<double>::setSize(int) [7]
+                0.00    0.00       1/1           RungeKutta4<double>::RungeKutta4(DataStruct<double>&) [10]
+                0.00    0.00       1/1           Central1D<double>::Central1D(DataStruct<double>&, DataStruct<double>&, FluxFunction<double>&) [11]
+                0.00    0.00  125001/125001      RungeKutta4<double>::getNumSteps() [18]
+                0.00    0.00   83334/83334       RungeKutta4<double>::currentU() [19]
+                0.00    0.00   83334/83334       Central1D<double>::ref2RHS() [20]
+                0.00    0.00   41667/41667       RungeKutta4<double>::initRK() [21]
+                0.00    0.00       4/4           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&) [23]
+                0.00    0.00       4/4           DataStruct<double>::DataStruct(int) [22]
+                0.00    0.00       2/2           write2File(DataStruct<double>&, DataStruct<double>&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [24]
+                0.00    0.00       1/1           LinearFlux<double>::LinearFlux() [26]
+                0.00    0.00       1/1           calcL2norm(DataStruct<double>&, DataStruct<double>&) [25]
+                0.00    0.00       1/1           frame_dummy [12]
+                0.00    0.00       1/1           RHSOperator<double>::~RHSOperator() [28]
+                0.00    0.00       1/1           Central1D<double>::~Central1D() [31]
+                0.00    0.00       1/1           RungeKutta4<double>::~RungeKutta4() [29]
+-----------------------------------------------
+                0.97    3.92   83334/83334       main [1]
+[2]     50.4    0.97    3.92   83334         Central1D<double>::evalRHS(DataStruct<double>&) [2]
+                3.92    0.00 8076865408/8076865408     LinearFlux<double>::computeFlux(double const&) [3]
+-----------------------------------------------
+                3.92    0.00 8076865408/8076865408     Central1D<double>::evalRHS(DataStruct<double>&) [2]
+[3]     40.4    3.92    0.00 8076865408         LinearFlux<double>::computeFlux(double const&) [3]
+-----------------------------------------------
+                1.57    0.00   41667/41667       main [1]
+[4]     16.2    1.57    0.00   41667         RungeKutta4<double>::finalizeRK(double) [4]
+-----------------------------------------------
+                1.27    0.00   83334/83334       main [1]
+[5]     13.1    1.27    0.00   83334         RungeKutta4<double>::stepUi(double) [5]
+-----------------------------------------------
+                1.12    0.00   83334/83334       main [1]
+[6]     11.5    1.12    0.00   83334         RungeKutta4<double>::setFi(DataStruct<double>&) [6]
+-----------------------------------------------
+                0.00    0.00       1/83338       Central1D<double>::Central1D(DataStruct<double>&, DataStruct<double>&, FluxFunction<double>&) [11]
+                0.00    0.00       2/83338       RungeKutta4<double>::RungeKutta4(DataStruct<double>&) [10]
+                0.01    0.00   83335/83338       main [1]
+[7]      0.1    0.01    0.00   83338         DataStruct<double>::setSize(int) [7]
+-----------------------------------------------
+                0.01    0.00   83334/83334       main [1]
+[8]      0.1    0.01    0.00   83334         Central1D<double>::eval(DataStruct<double>&) [8]
+-----------------------------------------------
+                                                 <spontaneous>
+[9]      0.1    0.01    0.00                 _init [9]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[10]     0.0    0.00    0.00       1         RungeKutta4<double>::RungeKutta4(DataStruct<double>&) [10]
+                0.00    0.00       2/83338       DataStruct<double>::setSize(int) [7]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[11]     0.0    0.00    0.00       1         Central1D<double>::Central1D(DataStruct<double>&, DataStruct<double>&, FluxFunction<double>&) [11]
+                0.00    0.00       1/83338       DataStruct<double>::setSize(int) [7]
+                0.00    0.00       1/1           RHSOperator<double>::RHSOperator() [27]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[12]     0.0    0.00    0.00       1         frame_dummy [12]
+-----------------------------------------------
+                0.00    0.00  125001/125001      main [1]
+[18]     0.0    0.00    0.00  125001         RungeKutta4<double>::getNumSteps() [18]
+-----------------------------------------------
+                0.00    0.00   83334/83334       main [1]
+[19]     0.0    0.00    0.00   83334         RungeKutta4<double>::currentU() [19]
+-----------------------------------------------
+                0.00    0.00   83334/83334       main [1]
+[20]     0.0    0.00    0.00   83334         Central1D<double>::ref2RHS() [20]
+-----------------------------------------------
+                0.00    0.00   41667/41667       main [1]
+[21]     0.0    0.00    0.00   41667         RungeKutta4<double>::initRK() [21]
+-----------------------------------------------
+                0.00    0.00       4/4           main [1]
+[22]     0.0    0.00    0.00       4         DataStruct<double>::DataStruct(int) [22]
+-----------------------------------------------
+                0.00    0.00       4/4           main [1]
+[23]     0.0    0.00    0.00       4         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&) [23]
+-----------------------------------------------
+                0.00    0.00       2/2           main [1]
+[24]     0.0    0.00    0.00       2         write2File(DataStruct<double>&, DataStruct<double>&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [24]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[25]     0.0    0.00    0.00       1         calcL2norm(DataStruct<double>&, DataStruct<double>&) [25]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[26]     0.0    0.00    0.00       1         LinearFlux<double>::LinearFlux() [26]
+                0.00    0.00       1/1           FluxFunction<double>::FluxFunction() [30]
+-----------------------------------------------
+                0.00    0.00       1/1           Central1D<double>::Central1D(DataStruct<double>&, DataStruct<double>&, FluxFunction<double>&) [11]
+[27]     0.0    0.00    0.00       1         RHSOperator<double>::RHSOperator() [27]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[28]     0.0    0.00    0.00       1         RHSOperator<double>::~RHSOperator() [28]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[29]     0.0    0.00    0.00       1         RungeKutta4<double>::~RungeKutta4() [29]
+-----------------------------------------------
+                0.00    0.00       1/1           LinearFlux<double>::LinearFlux() [26]
+[30]     0.0    0.00    0.00       1         FluxFunction<double>::FluxFunction() [30]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[31]     0.0    0.00    0.00       1         Central1D<double>::~Central1D() [31]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2022 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+  [25] calcL2norm(DataStruct<double>&, DataStruct<double>&) [18] RungeKutta4<double>::getNumSteps() [2] Central1D<double>::evalRHS(DataStruct<double>&)
+  [24] write2File(DataStruct<double>&, DataStruct<double>&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [6] RungeKutta4<double>::setFi(DataStruct<double>&) [20] Central1D<double>::ref2RHS()
+   [7] DataStruct<double>::setSize(int) [21] RungeKutta4<double>::initRK() [11] Central1D<double>::Central1D(DataStruct<double>&, DataStruct<double>&, FluxFunction<double>&)
+  [22] DataStruct<double>::DataStruct(int) [5] RungeKutta4<double>::stepUi(double) [31] Central1D<double>::~Central1D()
+   [3] LinearFlux<double>::computeFlux(double const&) [19] RungeKutta4<double>::currentU() [23] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&)
+  [26] LinearFlux<double>::LinearFlux() [10] RungeKutta4<double>::RungeKutta4(DataStruct<double>&) [9] _init
+  [27] RHSOperator<double>::RHSOperator() [29] RungeKutta4<double>::~RungeKutta4() [12] frame_dummy
+  [28] RHSOperator<double>::~RHSOperator() [30] FluxFunction<double>::FluxFunction() [1] main
+   [4] RungeKutta4<double>::finalizeRK(double) [8] Central1D<double>::eval(DataStruct<double>&)
